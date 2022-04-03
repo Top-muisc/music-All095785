@@ -18,7 +18,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["ريستارت"], prefixes=f"{HNDLR}"))
+@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["تحديث"], prefixes=f"{HNDLR}"))
 async def restart(client, m: Message):
     await m.delete()
     loli = await m.reply("1")
@@ -30,16 +30,16 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**✅ تم اعاده تشغيل موسيقى تليثون**")
+    await loli.edit("**✅ تم اعاده تشغيل موسيقى اميوزك ريس**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
-@Client.on_message(filters.command(["اوامر الاغاني"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["اوامري"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
 <b>👋 اهلا {m.from_user.mention}!
 
-𝘰𝘳𝘥𝘦𝘳𝘴 𝘮𝘶𝘴𝘪𝘤 𝘵𝘦𝘭𝘦𝘵𝘩𝘰𝘯
+اوامر اميوزك ريس
 ——————×—————
 
 ⧉ | لتشغيل صوتية في المكالمة أرسل ⇦ [ `{HNDLR}تشغيل  + اسم الاغنية` ]
@@ -54,19 +54,18 @@ async def help(client, m: Message):
 ⧉ | لتحميل صوتية أرسل ⇦ [ `{HNDLR}تحميل + اسم الاغنية او الرابط` ]
 ⧉ | لتحميل فيديو  ⇦  [ `{HNDLR}تحميل_فيديو + اسم الاغنية او الرابط` ]
 ———————×———————
-
-⧉ | لأعاده تشغيل التنصيب أرسل ⇦  [ `{HNDLR}ريستارت` ]
+⧉ | حول سورس ⇦  [ `{HNDLR}سورس` ]
+⧉ | لأعاده تشغيل التنصيب أرسل ⇦  [ `{HNDLR}تحديث` ]
 ———————×———————
-🛠 | @TelethonMusic
-⭐ | @LLL5L"""
+⭐ | @CC5WC"""
     await m.reply(HELP)
-@Client.on_message(filters.command(["الريبو"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["سورس"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
     REPO = f"""
 <b>👋  اهلا {m.from_user.mention}!
 
-🎶 هذا ميوزك العرب | @TelethonMusic
-⭐ المطور | @LLL5L
+🎶 هذا ميوزك ريس 
+⭐ المطور | @CC5WC
 """
     await m.reply(REPO, disable_web_page_preview=True)
